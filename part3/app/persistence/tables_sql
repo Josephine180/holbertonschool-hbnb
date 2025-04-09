@@ -68,3 +68,15 @@ VALUES
     (UUID(), 'Swimming Pool'),
     (UUID(), 'Air Conditioning')
 ON DUPLICATE KEY UPDATE name=name;
+
+INSERT INTO places (id, title, description, price, latitude, longitude, owner_id)
+VALUES
+('a1e23f45-1111-aaaa-bbbb-000000000001', 'Appartement cosy Paris', 'Charmant petit appartement dans le Marais', 120.0, 48.859, 2.352, '36c9050e-ddd3-4c3b-9731-9f487208bbc1'),
+
+('a1e23f45-1111-aaaa-bbbb-000000000002', 'Villa avec piscine', 'Grande villa avec piscine et vue sur mer', 280.0, 43.710, 7.262, '36c9050e-ddd3-4c3b-9731-9f487208bbc1'),
+
+('a1e23f45-1111-aaaa-bbbb-000000000003', 'Studio moderne Lyon', 'Studio bien équipé proche centre-ville', 90.0, 45.757, 4.835, '36c9050e-ddd3-4c3b-9731-9f487208bbc1'),
+
+('a1e23f45-1111-aaaa-bbbb-000000000004', 'Chalet à la montagne', 'Chalet rustique avec cheminée et neige !', 150.0, 45.899, 6.129, '36c9050e-ddd3-4c3b-9731-9f487208bbc1'),
+
+('a1e23f45-1111-aaaa-bbbb-000000000005', 'Maison de campagne', 'Maison calme avec grand jardin', 110.0, 47.000, 0.120, '36c9050e-ddd3-4c3b-9731-9f487208bbc1');
