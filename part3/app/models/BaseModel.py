@@ -13,8 +13,14 @@ class BaseModel(db.Model):
         db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     def save(self):
-        """Update the updated_at timestamp whenever the object is modified"""
+        """Sauvegarde l'instance dans la base de données."""
         self.updated_at = datetime.utcnow()
+        db.session.add(self)
+        db.session.commit()
+
+    def delete(self):
+        """Supprime l'instance de la base de données."""
+        db.session.delete(self)
         db.session.commit()
 
     def update(self, data):
@@ -22,4 +28,4 @@ class BaseModel(db.Model):
         for key, value in data.items():
             if hasattr(self, key):
                 setattr(self, key, value)
-        self.save()  # Update the updated_at timestamp
+        self.save()  # Sauvegarde et met à jour updated_at

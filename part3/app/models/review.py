@@ -48,9 +48,7 @@ class Review(BaseModel):
             "text": self.text,
             "rating": self.rating,
             "user_id": self.user_id,
-            "place_id": self.place_id,
-            "created_at": self.created_at.isoformat() if self.created_at else None,
-            "updated_at": self.updated_at.isoformat() if self.updated_at else None
+            "place_id": self.place_id
         }
 
     def update_review(self, new_text, new_rating):

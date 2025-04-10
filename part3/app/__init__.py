@@ -1,6 +1,8 @@
+# Modification de app/__init__.py pour gérer CORS correctement
+
 from flask import Flask
 from flask_restx import Api
-from config import DevelopmentConfig
+from config import Config
 from app.extensions import db, jwt, bcrypt
 from app.api.v1.users import api as users_ns
 from app.api.v1.amenities import api as amenities_ns
@@ -8,16 +10,27 @@ from app.api.v1.places import api as places_ns
 from app.api.v1.reviews import api as reviews_ns
 from app.api.v1.auth import api as auth_ns
 from app.api.v1.protected import api as protected_ns
-from app.extensions import db, jwt, bcrypt
+from flask_cors import CORS
+import os
+from pathlib import Path
 
 
-def create_app(config_class=DevelopmentConfig):
+def create_app(config_class=Config):
     app = Flask(__name__)
+    
+    # Configuration CORS plus permissive pendant le développement
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    
     app.config.from_object(config_class)
     app.config['SECRET_KEY'] = 'your_secret_key'
     bcrypt.init_app(app)
     jwt.init_app(app)
     db.init_app(app)
+
+    # Créer le dossier data s'il n'existe pas
+    data_dir = Path(app.root_path).parent / 'data'
+    if not data_dir.exists():
+        data_dir.mkdir(parents=True)
 
     # Créer les tables de la base de données
     with app.app_context():

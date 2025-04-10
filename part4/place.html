@@ -16,72 +16,14 @@
 </header>
 <body>
     <main>
-        <section class="container-places">
-        <section class="place-details">
-            <h1> Beautiful Beach House </h1>
-            <div class="place-info">
-                <p><strong> Hôte:</strong> John Doe</p>
-                <p><strong>Price per night: </strong> $150 </p>
-                <p><strong>Description: </strong> Beautiful beach house with amazing view</p>
-                <p><strong>Amenities: </strong>WiFi, Pool, Air Conditioning</p>
-                <a href="add_review.html"><button class="add-review"> Add review</button></a>
-            </div>
+        <section id="places-list">
         </section>
-        <section class="place-details">
-            <h1> Cozy Cabin </h1>
-            <div class="place-info">
-                <p><strong> Hôte:</strong> Marie Dupont</p>
-                <p><strong>Price per night: </strong> $100 </p>
-                <p><strong>Description: </strong> Cozy cabin in the wood</p>
-                <p><strong>Amenities: </strong>WiFi, TV, Air Conditioning</p>
-                <a href="add_review.html"><button class="add-review"> Add review</button></a>
-            </div>
-        </section>
-        <section class="place-details">
-            <h1> Modern Apartment </h1>
-            <div class="place-info">
-                <p><strong> Hôte:</strong> Jane Doe </p>
-                <p><strong>Price per night: </strong> $200 </p>
-                <p><strong>Description: </strong>Modern apartment in center of London</p>
-                <p><strong>Amenities: </strong>WiFi, TV, Air Conditioning</p>
-                <a href="add_review.html"><button class="add-review"> Add review</button></a>
-            </div>
-        </section>
-        </section>
-        <section id="reviews">
-            <h2> Reviews</h2>
-            <div class="review-card">
-                <p><strong>Name: </strong>Jane Smith</p>
-                <p>Great Place: </p>
-                <p>Rating:⭐⭐⭐☆☆</p>
-            </div>
-        </section>
-    
-        <secton id="reviews">
-            <div class="review-card">
-                <p><strong>Name: </strong>Robert Brown</p>
-                <p>Amazing location and very comfortable</p>
-                <p>Rating:⭐⭐⭐⭐⭐</p>
-            </div>
-        </section>
-        <section id="reviews">
-            <div class="review-card">
-                <p><strong>Name: </strong>James Watson</p>
-                <p>Beautiful apartment very pleasant</p>
-                <p>Rating:⭐⭐⭐⭐☆</p>
-            </div>
-        </section>
-        <section id="add-review">
-            <h2>Add a Review</h2>
-            <form id="review-form">
-                <label for="review-text">Review:</label>
-                <textarea id="review-text" name="review-text" required></textarea>
-                
-                <button type="submit">Submit</button>
-            </form>
+        <label for="price-filter">Filter by price:</label>
+        <select id="price-filter"></select>
+        <section id="places-review">
         </section>
     </main>
-    <script src="scripts.js"></script>
+    <script src="static/place.js"></script>
 </body>
 <footer>
     <p> © 2025 HBNB. All rights reserved. </p>

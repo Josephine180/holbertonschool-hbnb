@@ -1,0 +1,17 @@
+# Environnement virtuel
+.venv/
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*$py.class
+# Fichiers de logs
+*.log
+# Fichiers de configuration d’éditeur
+.vscode/
+.idea/
+# Fichiers de dépendances téléchargées
+*.egg-info/
+dist/
+build/
+# Fichiers de cache
+.cache/
