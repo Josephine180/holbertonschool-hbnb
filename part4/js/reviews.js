@@ -111,7 +111,7 @@ async function fetchPlaceForReview(placeId, token) {
     // Mettre à jour le titre de la page avec le nom de la place
     const pageTitle = document.querySelector('main h2');
     if (pageTitle) {
-      pageTitle.textContent = `Add a Review for ${placeData.title}`;
+      pageTitle.textContent = `Add a review for : ${placeData.title}`;
     }
 
   } catch (error) {

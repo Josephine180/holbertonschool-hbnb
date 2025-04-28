@@ -31,8 +31,6 @@ header {
     text-align: left;
 }
 
-header button
-
 h1, h2 {
     color: #f34232;
     margin-bottom: 1rem;
@@ -155,7 +153,7 @@ nav {
     transform: translateY(-50%);
     color: #000000;
     font-size: 16px;
-    pointer-events: none; /* empêche de bloquer le focus */
+    pointer-events: none; 
   }
   
   .input-icon input {
@@ -180,11 +178,13 @@ nav {
     font-size: 30px;
 }
 
+/* SUPERPOSITION ICONE FORM SUR L'INPUT */
 .input-icon {
     position: relative;
     width: 100%;
   }
   
+  /* ICONE */
   .input-icon i {
     position: absolute;
     top: 39px;
@@ -192,21 +192,38 @@ nav {
     color: #000000;
   }
   
+  /* TEXTE A GAUCHE POUR EVITER CHEVAUCHEMENT AVEC ICONE */ 
   .input-icon input {
     padding-left: 35px;
   }
+
 /* BOUTONS */
-.details-button {
+#view-details {
+    padding: 12px 24px ;
     background-color: #f34232;
     border-radius: 8px;
-    padding: 8px 10px;
     color: white;
     text-decoration: none;
     font-weight: bold;
     text-align: center;
     transition: all 0.2s ease;
-    display: inline-block;
-    
+}
+
+#details-button {
+    display: inline-flex; /* compact */
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: #f34232;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    width: auto; /* Ne pas prendre toute la largeur */
+    white-space: nowrap; /* Le texte reste sur une ligne */
+    margin: 0 auto; /* CENTER automatiquement */
+    grid-column: 1 / -1;
 }
 
 .details-button:hover {
@@ -255,6 +272,7 @@ nav {
     
 }
 
+
 /* BOUTONS REVIEW / LOGIN */
 
 #login-form button {
@@ -302,7 +320,7 @@ nav {
     margin-top: 2rem;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* force les enfants à remplir une colonne */
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
@@ -314,6 +332,7 @@ nav {
     border-radius: 10px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }
+
 
 .review p {
     margin-bottom: 0.5rem;
