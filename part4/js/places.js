@@ -82,18 +82,18 @@ function displayPlaces(places) {
 
   // Créer les cartes pour chaque place
   places.forEach((place, index) => {
-    // Distribuer les images entre les différentes places (1-4)
-    const imageIndex = (index % 4) + 1;
+    // Distribuer les images entre les différentes places (1-5)
+    const imageIndex = (index % 5) + 1;
 
     const placeElement = document.createElement('div');
     placeElement.className = 'place-card';
     placeElement.dataset.price = place.price;
 
     placeElement.innerHTML = `
-      <img src="images/place${imageIndex}.jpg" alt="${place.title}">
+      <img src="/images/${place.id}.jpg" alt="${place.title}">
       <h3>${place.title}</h3>
       <p>$${place.price} per night</p>
-      <a href="place.html?id=${place.id}" class="details-button">View Details</a>
+      <a href="place.html?id=${place.id}" class="details-button" id="view-details">View Details</a>
     `;
 
     placesListElement.appendChild(placeElement);

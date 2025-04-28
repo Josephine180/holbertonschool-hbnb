@@ -81,15 +81,16 @@ function displayPlaceDetails(place) {
   const placeInfoElement = document.querySelector('.place-info');
   if (placeInfoElement) {
     // Utiliser une image basée sur l'ID de la place pour avoir une consistance
-    const imageIndex = (place.id.charCodeAt(0) % 4) + 1;
-
+    const imageIndex = (place.id.length % 5) + 1;
+  
     placeInfoElement.innerHTML = `
-      <img src="images/place${imageIndex}.jpg" alt="${place.title}">
+      <img src="/images/${place.id}.jpg" alt="${place.title}">
       <h2>${place.title}</h2>
-      <p>Hosted by Owner ID: ${place.owner_id}</p>
-      <p>$${place.price} per night</p>
+      <p><strong>Hosted by Owner ID: </strong>${place.owner_id}</p>
+      <p><strong>$${place.price} per night</strong></p>
       <p>${place.description || 'No description available'}</p>
-      
+      <br/>
+      <hr />
       <h3>Amenities</h3>
       <ul id="amenities-list">
         ${place.amenities && place.amenities.length > 0
@@ -118,7 +119,7 @@ function displayPlaceDetails(place) {
         const reviewElement = document.createElement('div');
         reviewElement.className = 'review-card';
         reviewElement.innerHTML = `
-          <p><strong>User ID: ${review.user_id}</strong></p>
+          <p><strong>User ID:</strong> ${review.user_id}</p>
           <p>${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</p>
           <p>${review.text}</p>
         `;
